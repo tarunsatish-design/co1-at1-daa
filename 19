@@ -1,0 +1,22 @@
+#include <stdio.h>
+
+// Recursive function simulating T(n) = T(n/2) + n
+int financial_summation(int n) {
+    if (n <= 1) {
+        return 1; // Base case
+    }
+    // Linear work (n) + recursive call on half the input
+    return n + financial_summation(n / 2);
+}
+
+int main() {
+    int transactions = 128; // Example input size
+    printf("--- Recursive Financial Summation Engine ---\n");
+    printf("Input size (transactions): %d\n", transactions);
+    
+    int total_operations = financial_summation(transactions);
+    
+    printf("Total simulated operations: %d\n", total_operations);
+    printf("Asymptotic Complexity: O(n)\n");
+    return 0;
+}
